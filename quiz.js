@@ -33,14 +33,12 @@ const c = document.getElementById("c");
 const d = document.getElementById("d");
 const element = document.querySelectorAll(".answer");
 
-
-function getSelected(){
-    
+// just adding event listner without using function so we no need to call this to in an inner function in start.
     for(var i =0; i<element.length;i++){
         element[i].addEventListener("click", function(){
             const answer = this.id;
             // console.log(answer);
-            var right = quizData[currentQuestion].correct;
+            const right = quizData[currentQuestion].correct;
             console.log(right);
             document.getElementById("next").classList.remove("hide");
             if(answer==right){
@@ -57,11 +55,10 @@ function getSelected(){
         })
     }
     
-}
 
 
 function start(){
-    getSelected();
+    // getSelected();
     document.getElementById("options").classList.remove("hide");
     document.getElementById("start").classList.add("hide");
     query.innerText = quizData[currentQuestion].question;
@@ -80,6 +77,7 @@ function start(){
             document.getElementById("answer-container").innerHTML = "<h1>your score is "+score +" out of "+quizData.length+"</h1>";
         }
         else{
+
             start();
             document.getElementById("next").classList.add("hide");
             const butt = document.querySelectorAll(".answer");
@@ -88,8 +86,6 @@ function start(){
             butt[i].classList.remove("wrong");
             }
         }
-        
-
        
 
     }
