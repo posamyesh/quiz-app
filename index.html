@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>quiz</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div id="answer-container" class="answer-box">
+        <h1 id="question">where is question vro whn you are not at end yah yah ?</h1>
+        <div id="options" class="option-box hide">
+            <div class="button-box">
+                <button id="a" class="btn glow answer">first option will be correct option</button>
+            </div>
+            <div class="button-box">
+                <button id="b" class="btn glow answer">second option</button>
+            </div>
+            <div class="button-box">
+                <button id="c" class="btn glow answer">third option</button>
+            </div>
+            <div class="button-box">
+                <button id="d" class="btn glow answer">fourth option</button>
+            </div>
+            
+        </div>
+        <div id="starting">
+            <button id="start" onclick="start()" class="btn glow">Start</button>
+            <button id="next" onclick="nextQuestion()" class="btn glow hide nexxt">Next</button>
+        </div>
+        
+    </div>
+
+
+
+    <script src="quiz.js"></script>
+</body>
+</html>
