@@ -76,7 +76,9 @@ function start(){
         enableButt();
         currentQuestion++;
         if(currentQuestion>quizData.length-1){
+            alert("Thank you for submitting")
             document.getElementById("answer-container").innerHTML = "<h1>your score is "+score +" out of "+quizData.length+"</h1>";
+            document.getElementById("reload").classList.remove("hide");
         }
         else{
 
@@ -100,4 +102,8 @@ function start(){
         for(var i=0;i<element.length;i++){
             element[i].disabled=false;
         }
+    }
+
+    function refresh(){
+        location.reload();
     }
