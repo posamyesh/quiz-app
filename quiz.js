@@ -36,6 +36,7 @@ const element = document.querySelectorAll(".answer");
 // just adding event listner without using function so we no need to call this to in an inner function in start.
     for(var i =0; i<element.length;i++){
         element[i].addEventListener("click", function(){
+            
             const answer = this.id;
             // console.log(answer);
             const right = quizData[currentQuestion].correct;
@@ -51,7 +52,7 @@ const element = document.querySelectorAll(".answer");
                 document.getElementById(right).classList.add("correct");
                 
             }
-            
+            disableButt();
         })
     }
     
@@ -72,6 +73,7 @@ function start(){
 
 
     function nextQuestion(){
+        enableButt();
         currentQuestion++;
         if(currentQuestion>quizData.length-1){
             document.getElementById("answer-container").innerHTML = "<h1>your score is "+score +" out of "+quizData.length+"</h1>";
@@ -89,4 +91,13 @@ function start(){
        
 
     }
-
+    function disableButt(){
+        for(var i=0;i<element.length;i++){
+            element[i].disabled=true;
+        }
+    }
+    function enableButt(){
+        for(var i=0;i<element.length;i++){
+            element[i].disabled=false;
+        }
+    }
